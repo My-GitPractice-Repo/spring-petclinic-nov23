@@ -16,7 +16,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'mvn clean package'
-                archiveArtifacts: '**/spring-petclinic-*.jar'
+                archiveArtifacts artifacts: '**/spring-petclinic-*.jar'
                 junit testResults: '**/TEST-*.xml'
             }
         }
